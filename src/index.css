@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark Corporate Theme */
+    --background: 220 58% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 226 49% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 226 49% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 201 100% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 100% 68%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 25%;
+    --muted-foreground: 218 15% 70%;
+
+    --accent: 201 100% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 71%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 100% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 29 100% 70%;
+    --warning-foreground: 220 58% 8%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 201 100% 56%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar tokens */
+    --sidebar-background: 226 49% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 201 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 30% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 201 100% 56%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(201 100% 56%), hsl(256 100% 68%));
+    --gradient-glow: radial-gradient(circle at top, hsl(201 100% 56% / 0.15), transparent);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 24px hsl(220 58% 4% / 0.4);
+    --shadow-glow: 0 0 40px hsl(201 100% 56% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    /* Light Corporate Theme */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 201 100% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 256 100% 58%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 201 100% 96%;
+    --accent-foreground: 201 100% 42%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 29 96% 56%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 201 100% 42%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 201 100% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 201 100% 42%;
+
+    /* Custom gradients for light mode */
+    --gradient-primary: linear-gradient(135deg, hsl(201 100% 42%), hsl(256 100% 58%));
+    --gradient-glow: radial-gradient(circle at top, hsl(201 100% 42% / 0.08), transparent);
+    
+    /* Shadows for light mode */
+    --shadow-card: 0 2px 8px hsl(220 13% 91% / 0.8);
+    --shadow-glow: 0 0 30px hsl(201 100% 42% / 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .glass-effect {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
